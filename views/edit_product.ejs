@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="card p-3 shadow">
+            <h2>Edit Product</h2>
+
+            <form method="post" action="/product/update">
+                <input type="hidden" name="oldValue" value="<%= data.oldValue || data.laptop %>">
+                <div class="mb-3">
+                  <label for="laptop" class="form-label">Laptop</label>
+                  <input type="text" class="form-control" id="laptop" name="laptop" value="<%= data.laptop %>" required> 
+                  <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach(e => { %>
+                      <p class="text-danger"><%= e.msg %></p>     
+                    <% }) %>    
+                  <% } %>                    
+                </div>
+                <div class="mb-3">
+                  <label for="cpu" class="form-label">CPU</label>
+                  <input type="text" class="form-control" id="cpu" name="cpu" value="<%= data.cpu %>" required>                 
+                </div>
+                <div class="mb-3">
+                  <label for="gpu" class="form-label">GPU</label>
+                  <input type="text" class="form-control" id="gpu" name="gpu" value="<%= data.gpu %>" required>                 
+                </div>
+                <div class="mb-3">
+                  <label for="display" class="form-label">Display</label>
+                  <input type="text" class="form-control" id="display" name="display" value="<%= data.display %>" required>                 
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/products" class="btn btn-secondary">Kembali</a>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>

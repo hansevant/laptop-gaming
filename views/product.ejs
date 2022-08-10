@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <% if (!data) { %>
+            <div class="alert alert-danger" role="alert">
+                There is not data
+                <br>
+                <a href="/products">Kembali</a>
+            </div>
+            <% }else{%>
+            <div class="card text-bg-light mb-3">
+                    
+                <div class="card-header">Detail Laptop</div>
+                <div class="card-body">
+                    <a href="/product/delete/<%= data.laptop %>" class="btn btn-danger badge float-end">Delete</a>
+                    <a href="/product/edit/<%= data.laptop %>" class="btn btn-warning text-dark badge float-end me-2">Edit</a>
+                  <h5 class="card-title"><%= data.laptop %></h5>
+                  <p class="card-text">Specifications</p>
+                  <ul>
+                    <li><%= data.cpu %></li>
+                    <li><%= data.gpu %></li>
+                    <li><%= data.display %></li>
+                  </ul>
+                  <p class="text-muted">The picks on this list should be ready to run Windows 11 if it didn't come preinstalled already.</p>
+                  <a href="/products" class="nav-link text-primary">&laquo; Kembali</a>
+                </div>
+            </div>
+            <% } %> 
+        </div>
+    </div>
+</div>
